@@ -1,7 +1,14 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+@plugin "daisyui";
 
-
+h6{
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
