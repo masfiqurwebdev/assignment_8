@@ -1,4 +1,7 @@
 // components/CourseCard.jsx
+
+
+import { Link } from 'next/link';
 export default function CourseCard({ course }) {
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
@@ -17,7 +20,7 @@ export default function CourseCard({ course }) {
           </span>
 
           <button className="bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm hover:bg-indigo-700">
-            View Details
+            <a href={`/course/1`}>View Details</a>
           </button>
         </div>
       </div>

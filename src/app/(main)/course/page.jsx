@@ -9,9 +9,9 @@ export const metadata = {
 
 const CoursePage = () => {
   return (
-    <div>
+    <div className='container mx-auto '>
       {/* <h6>Course Page</h6> */}
-      <div className='grid gap-6 grid-cols-3 wrap'>
+      <div className=' grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
           courses.map((course) =>(
           <CourseCard key={course.id} course={course}/>

@@ -17,17 +17,20 @@ import {
 const SignUpPage = () => {
   const onSubmit =async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const userData = Object.fromEntries(formData.entries());
-    console.log('user data :' ,userData);
 
-    const { data, error } = await authClient.signUp.email({
-      name: userData.name, // required
-      email: userData.email, // required
-      password: userData.password, // required
-      callbackURL: "/login",
-    });
-console.log('data is' , {data, error});
+    console.log('submited');
+    
+    // const formData = new FormData(e.currentTarget);
+    // const userData = Object.fromEntries(formData.entries());
+    // console.log('user data :' , userData);
+
+//     const { data, error } = await authClient.signUp.email({
+//       name: userData.name, // required
+//       email: userData.email, // required
+//       password: userData.password, // required
+//       callbackURL: "/login",
+//     });
+// console.log('data is' , {data, error});
 
     // const data: Record<string, string> = {};
     // // Convert FormData to plain object
@@ -41,12 +44,14 @@ console.log('data is' , {data, error});
     <div className='flex flex-col items-center'>
 
         <h1 className='text-3xl font-bold mt-4'>Sign Up</h1>
+
+
+
       <Form className="w-[70vw] h-[40%] px-6 py-4 mt-5 bg-gray-300 rounded-lg flex w-96 flex-col gap-4" onSubmit={onSubmit}>
         
         {/* name */}
         <TextField
             isRequired
-            name="name"
             validate={(value) => {
               if (value.length < 3) {
                 return "Name must be at least 3 characters";
@@ -62,7 +67,6 @@ console.log('data is' , {data, error});
         {/* email */}
         <TextField
           isRequired
-          name="email"
           type="email"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
@@ -80,7 +84,6 @@ console.log('data is' , {data, error});
         <TextField
           isRequired
           minLength={8}
-          name="password"
           type="password"
           validate={(value) => {
             if (value.length < 8) {
@@ -112,6 +115,7 @@ console.log('data is' , {data, error});
           </Button>
         </div>
       </Form>
+      
     </div>
   );
 };
