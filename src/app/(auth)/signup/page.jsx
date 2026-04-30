@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 
 import {
@@ -14,9 +15,20 @@ import {
 
 
 const SignUpPage = () => {
-  const onSubmit = (e) => {
-    // e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
+  const onSubmit =async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const userData = Object.fromEntries(formData.entries());
+    console.log('user data :' ,userData);
+
+    const { data, error } = await authClient.signUp.email({
+      name: userData.name, // required
+      email: userData.email, // required
+      password: userData.password, // required
+      callbackURL: "/login",
+    });
+console.log('data is' , {data, error});
+
     // const data: Record<string, string> = {};
     // // Convert FormData to plain object
     // formData.forEach((value, key) => {
