@@ -22,24 +22,31 @@ const Navbar = () => {
 
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <Link href={'/'} className="btn btn-ghost text-xl">SkillSphere</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-
-        {links}
-
-    </ul>
-  </div>
-  <div className="navbar-end flex gap-4">
-    <div className="flex align-middle rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
+            <div className="flex align-middle rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
         <input type="text" placeholder="Search" className="border-0 outline-0" />
 
         <button >
             <CiSearch width={6} />
         </button>
     </div>
-    <a className="btn">Log In</a>
+    {links}
+
+    </ul>
+  </div>
+  <div className="navbar-end flex gap-4">
+    <div className="flex align-middle hidden md:block rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
+        <input type="text" placeholder="Search" className="border-0 outline-0" />
+
+        <button >
+            <CiSearch width={6} />
+        </button>
+    </div>
+
+    <Link href={'/signup'} className="btn btn-primary">Sign Up</Link>
   </div>
 </div>
   )

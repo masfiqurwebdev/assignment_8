@@ -1,0 +1,82 @@
+export const courses = [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+      "title": "Complete JavaScript Mastery",
+      "instructor": "John Doe",
+      "rating": 4.8,
+      "detailsLink": "/courses/1"
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+      "title": "React JS From Beginner to Advanced",
+      "instructor": "Jane Smith",
+      "rating": 4.7,
+      "detailsLink": "/courses/2"
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "title": "Next.js Full Stack Development",
+      "instructor": "Michael Lee",
+      "rating": 4.9,
+      "detailsLink": "/courses/3"
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1537432376769-00a1c1b1b6c4",
+      "title": "Tailwind CSS Crash Course",
+      "instructor": "Sarah Johnson",
+      "rating": 4.6,
+      "detailsLink": "/courses/4"
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "title": "MongoDB & Database Design",
+      "instructor": "David Brown",
+      "rating": 4.5,
+      "detailsLink": "/courses/5"
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
+      "title": "Node.js & Express API Development",
+      "instructor": "Chris Evans",
+      "rating": 4.7,
+      "detailsLink": "/courses/6"
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+      "title": "UI/UX Design Fundamentals",
+      "instructor": "Emily Davis",
+      "rating": 4.4,
+      "detailsLink": "/courses/7"
+    },
+    {
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+      "title": "Python for Beginners",
+      "instructor": "Robert Wilson",
+      "rating": 4.6,
+      "detailsLink": "/courses/8"
+    },
+    {
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1581091870622-6c4c1b5c06d0",
+      "title": "Data Structures & Algorithms",
+      "instructor": "Sophia Martinez",
+      "rating": 4.9,
+      "detailsLink": "/courses/9"
+    },
+    {
+      "id": 10,
+      "image": "https://images.unsplash.com/photo-1505685296765-3a2736de412f",
+      "title": "Full Stack Web Development Bootcamp",
+      "instructor": "Daniel Anderson",
+      "rating": 5.0,
+      "detailsLink": "/courses/10"
+    }
+  ]

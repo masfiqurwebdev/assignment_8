@@ -9,6 +9,10 @@ h6{
   justify-content: center;
   margin-top: 50px;
 }
+
+*{
+  /* border:1px solid black; */
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
