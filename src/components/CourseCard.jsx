@@ -20,7 +20,7 @@ export default function CourseCard({ course }) {
           </span>
 
           <button className="bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm hover:bg-indigo-700">
-            <a href={`/course/1`}>View Details</a>
+            <a href={`/course/${course.id}`}>View Details</a>
           </button>
         </div>
       </div>

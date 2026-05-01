@@ -26,7 +26,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-            <div className="flex align-middle rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
+           <div className="flex lg:hidden align-middle rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
         <input type="text" placeholder="Search" className="border-0 outline-0" />
 
         <button >
