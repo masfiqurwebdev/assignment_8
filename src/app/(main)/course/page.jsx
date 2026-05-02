@@ -8,7 +8,7 @@ export const metadata = {
 
 
 const getCourses = async () =>{
-  const res = await fetch('http://localhost:5004/all-courses' , {cache:'force-cache'})
+  const res = await fetch('http://localhost:5004/all-courses' )
   return res.json();
 }
 
@@ -17,8 +17,8 @@ const CoursePage = async () => {
   const courses = await getCourses();
   
   return (
-    <div className='container mx-auto '>
-      {/* <h6>Course Page</h6> */}
+    <div className='container mx-auto mt-[5vh]'>
+      <h1 className='text-3xl mb-4 font-bold'>All Course </h1>
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {
           courses.map((course) =>(

@@ -25,10 +25,10 @@ const CourseDetaisPage = async ({ params }) => {
   const courses = await getCourses();
 
   return (
-    <div className="container mx-auto">
-      <div className="mb-30 mt-20 card card-side bg-base-100 shadow-sm">
+    <div className="container mx-auto mt-[5vh]">
+      <div className="flex flex-col md:flex-row mb-14">
         <figure className="w-[50vw] rounded-sm ">
-          <Image className="w-[100%]" src={course.image} width={1000} height={1000} alt="Movie" />
+          <Image className="w-[100%] rounded-sm" src={course.image} width={1000} height={1000} alt="Movie" />
         </figure>
 
         <div className="card-body max-w=[50%]">
@@ -55,11 +55,14 @@ const CourseDetaisPage = async ({ params }) => {
         </div>
       </div>
 
+       <h1 className="text-2xl font-bold mb-8 ">More Course</h1>
 
-      <div className=" flex ">
-        {courses.map((course) => (
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  ">
+
+        {courses.slice(0,4).map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
+
       </div>
     </div>
   );
