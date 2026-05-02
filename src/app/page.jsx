@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import PopularCourses from "@/app/(main)/course/PopularCourses";
+import PopularCourses from "@/app/course/PopularCourses";
 import TopInstractors from "@/components/TopInstractors";
 
 export default function Home() {

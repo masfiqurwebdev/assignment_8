@@ -6,8 +6,9 @@ export const metadata = {
 };
 const MyProfilePage = () => {
   return (
-    <div>
-      <h6>My Profile</h6>
+    <div className='container mx-auto grid gap-2 md:gap-4 grid-cols-1 md:grid-cols-2'>
+      <div className='bg-pink-100'>section 1</div>
+      <div className='bg-purple-100'>section 2</div>
     </div>
   )
 }

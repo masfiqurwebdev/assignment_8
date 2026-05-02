@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { CiSearch } from "react-icons/ci";
 
 
 const Navbar = () => {
@@ -10,7 +9,7 @@ const Navbar = () => {
     <li><Link href={'/my-profile'}>My Profile</Link></li>
     </>
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="container mx-auto navbar bg-base-100 ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,25 +25,13 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-           <div className="flex lg:hidden align-middle rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
-        <input type="text" placeholder="Search" className="border-0 outline-0" />
 
-        <button >
-            <CiSearch width={6} />
-        </button>
-    </div>
     {links}
 
     </ul>
   </div>
   <div className="navbar-end flex gap-4">
-    <div className="flex align-middle hidden md:block rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
-        <input type="text" placeholder="Search" className="border-0 outline-0" />
 
-        <button >
-            <CiSearch width={6} />
-        </button>
-    </div>
 
     <Link href={'/signup'} className="btn btn-primary">Sign Up</Link>
   </div>

@@ -1,5 +1,6 @@
 // import { courses } from '../../../../data/courses';
 import CourseCard from '@/components/CourseCard';
+import { CiSearch } from "react-icons/ci";
 
 export const metadata = {
   title: "Courses",
@@ -18,7 +19,20 @@ const CoursePage = async () => {
   
   return (
     <div className='container mx-auto mt-[5vh]'>
-      <h1 className='text-3xl mb-4 font-bold'>All Course </h1>
+
+      <div className='flex justify-between mb-4 '>
+
+        <h1 className='text-3xl font-bold'>All Course </h1>
+        <div className="flex align-middle md:block rounded-lg px-3 py-2 items-center gap-3 border-gray-600 border">
+          <input type="text" placeholder="Search" className="border-0 outline-0" />
+
+          <button className='cursor-pointer font-bold'>
+            <CiSearch width={100}  />
+          </button>
+        </div>
+
+      </div>
+
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {
           courses.map((course) =>(
