@@ -36,8 +36,8 @@ const instructors = [
 
 const TopInstractors = () => {
   return (
-   <section className="py-10 px-5 bg-gray-50 container mx-auto ">
-      <h2 className="text-2xl font-bold mb-6">🏆 Top Instructors</h2>
+   <section className="py-10 px-5 mt-12 bg-gray-50 container mx-auto ">
+      <h2 className="text-2xl font-bold mb-6">Top Instructors</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {instructors.map((ins, i) => (
           <div key={i} className="p-5 bg-white rounded-xl shadow">

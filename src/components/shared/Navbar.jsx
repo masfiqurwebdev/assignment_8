@@ -1,5 +1,8 @@
+'use client'
+import { signOut, useSession } from "@/lib/auth-client"
+import Image from "next/image"
 import Link from "next/link"
-
+import profile from '../../../public/instructors/instructor_1.png'
 
 const Navbar = () => {
 
@@ -8,6 +11,16 @@ const Navbar = () => {
     <li><Link href={'/course'}>Course</Link></li>
     <li><Link href={'/my-profile'}>My Profile</Link></li>
     </>
+
+
+    const { data , isPending} = useSession();
+    if(isPending){
+      return <div className="text-center">loading...</div>
+    }
+    console.log('session data in navbar:' , data);
+    const user = data?.user;
+
+    
   return (
     <div className="container mx-auto navbar bg-base-100 ">
   <div className="navbar-start">
@@ -30,10 +43,30 @@ const Navbar = () => {
 
     </ul>
   </div>
-  <div className="navbar-end flex gap-4">
+  <div className="navbar-end flex gap-6">
+    {
+      user ? <>
+      <div className="flex items-center ">
+       
+        <p>Wellcome, 
+           </p>
+                <Image
+                  className="w-10 rounded-full"
+                  width={80}
+                  height={80}
+                  src={profile}
+                  alt={"profile image"}
+                />
+      </div>
+      <button onClick={() => signOut()}>SignOut</button>
+      </>:
+      
+      <>
+        <Link href={'/login'} className="btn btn-primary">Log In</Link>
+        <Link href={'/signup'} className="btn btn-outline">Sign Up</Link>
+      </>
+    }
 
-
-    <Link href={'/signup'} className="btn btn-primary">Sign Up</Link>
   </div>
 </div>
   )

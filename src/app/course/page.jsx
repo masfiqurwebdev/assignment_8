@@ -1,5 +1,9 @@
-// import { courses } from '../../../../data/courses';
+// 'use client'
+
 import CourseCard from '@/components/CourseCard';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 import { CiSearch } from "react-icons/ci";
 
 export const metadata = {
@@ -13,8 +17,20 @@ const getCourses = async () =>{
   return res.json();
 }
 
-const CoursePage = async () => {
 
+const CoursePage = async () => {
+  
+  const session = await auth.api.getSession({
+    headers: await headers()
+  })
+
+  console.log('session data in course page' ,session);
+
+  const user = session?.user;
+  if(!user){
+    redirect ('/signup');
+    // return <div>Please Sign in to access to the course page</div>
+  }
   const courses = await getCourses();
   
   return (

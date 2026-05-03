@@ -10,58 +10,70 @@ import {
   Form,
   Input,
   Label,
+  Text,
   TextField,
 } from "@heroui/react";
 
-
 const SignUpPage = () => {
-
-  const onSubmit =async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log('submited');
-    
+    console.log("submited");
+
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
-    console.log('user data :' , userData);
+    console.log("user data :", userData);
 
     const { data, error } = await authClient.signUp.email({
       name: userData.name, // required
+      image: userData.image, // required
       email: userData.email, // required
       password: userData.password, // required
       callbackURL: "/login",
     });
+    if (error) {
+      alert("error singing up : ", error.message);
+    } else if (data) {
+      <div>Signup successful</div>;
+    }
   };
 
   return (
-    <div className='flex flex-col items-center h-[100vh] container mx-auto my-auto'>
+    <div className="flex flex-col items-center h-[100vh] container mx-auto my-auto">
+      <h1 className="text-3xl font-bold mt-4">Sign Up</h1>
 
-        <h1 className='text-3xl font-bold mt-4'>Sign Up</h1>
-
-
-       {/* <div>
+      {/* <div>
         <input type="text" />
         <input type="email" />
         <button onClick={onSubmit}>sign up</button>
        </div> */}
 
-      <Form className="w-[70vw] h-[40%] px-6 py-4 mt-5 bg-gray-300 rounded-lg flex w-96 flex-col gap-4" onSubmit={onSubmit}>
-        
+      <Form
+        className="w-[70vw] h-[50%] px-6 py-4 mt-5 bg-gray-300 rounded-lg flex w-96 flex-col gap-4"
+        onSubmit={onSubmit}
+      >
         {/* name */}
         <TextField
-            isRequired
-            // validate={(value) => {
-            //   if (value.length < 3) {
-            //     return "Name must be at least 3 characters";
-            //   }
-            //   return null;
-            // }}
-          >
-            <Label>Name</Label>
-            <Input name='name' placeholder="John Doe" />
-            <FieldError />
+          isRequired
+          // validate={(value) => {
+          //   if (value.length < 3) {
+          //     return "Name must be at least 3 characters";
+          //   }
+          //   return null;
+          // }}
+        >
+          <Label>Name</Label>
+          <Input name="name" placeholder="John Doe" />
+          <FieldError />
         </TextField>
-        
+
+        {/* image */}
+        <TextField isRequired>
+          <Label>Image</Label>
+          <Input name="image" placeholder="Enter Your Image URL" />
+          <FieldError />
+        </TextField>
+
         {/* email */}
         <TextField
           isRequired
@@ -74,7 +86,7 @@ const SignUpPage = () => {
           // }}
         >
           <Label>Email</Label>
-          <Input name='email' placeholder="john@example.com" />
+          <Input name="email" placeholder="john@example.com" />
           <FieldError />
         </TextField>
 
@@ -97,7 +109,7 @@ const SignUpPage = () => {
           // }}
         >
           <Label>Password</Label>
-          <Input name='password' placeholder="Enter your password" />
+          <Input name="password" placeholder="Enter your password" />
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
@@ -113,7 +125,6 @@ const SignUpPage = () => {
           </Button>
         </div>
       </Form>
-      
     </div>
   );
 };
