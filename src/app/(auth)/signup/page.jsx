@@ -33,20 +33,15 @@ const SignUpPage = () => {
     });
     if (error) {
       alert("error singing up : ", error.message);
-    } else if (data) {
-      <div>Signup successful</div>;
+    }
+    if (data) {
+      alert('sign up successful')
     }
   };
 
   return (
     <div className="flex flex-col items-center h-[100vh] container mx-auto my-auto">
       <h1 className="text-3xl font-bold mt-4">Sign Up</h1>
-
-      {/* <div>
-        <input type="text" />
-        <input type="email" />
-        <button onClick={onSubmit}>sign up</button>
-       </div> */}
 
       <Form
         className="w-[70vw] h-[50%] px-6 py-4 mt-5 bg-gray-300 rounded-lg flex w-96 flex-col gap-4"
@@ -70,7 +65,7 @@ const SignUpPage = () => {
         {/* image */}
         <TextField isRequired>
           <Label>Image</Label>
-          <Input name="image" placeholder="Enter Your Image URL" />
+          <Input name="image" placeholder="Enter Your Image URL(must be from images.unsplash.com)" />
           <FieldError />
         </TextField>
 
@@ -115,14 +110,12 @@ const SignUpPage = () => {
           </Description>
           <FieldError />
         </TextField>
-        <div className="flex gap-2">
+        <div className="text-center">
           <Button type="submit">
             <Check />
-            Submit
+            Sign Up
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+
         </div>
       </Form>
     </div>

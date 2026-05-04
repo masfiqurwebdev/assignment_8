@@ -2,18 +2,19 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
-  images:{
-    remotePatterns:[
+  images: {
+    remotePatterns: [
       {
-        protocol:'https' ,
-        hostname:'unsplash.com' ,
-        port: '',
-        pathname:'**',
-        search:''
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: '**',
+        search:'',
       },
-
-
-    ]
-  }
+      {
+        protocol: "http",
+        hostname: "plus.unsplash.com",
+      },
+    ],
+  },
 }
 export default nextConfig;

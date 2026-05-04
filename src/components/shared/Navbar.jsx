@@ -50,15 +50,15 @@ const Navbar = () => {
        
         <p>Wellcome, 
            </p>
-                <Image
+                {/* <Image
                   className="w-10 rounded-full"
                   width={80}
                   height={80}
-                  src={profile}
+                  src={user.image}
                   alt={"profile image"}
-                />
+                /> */}
       </div>
-      <button onClick={() => signOut()}>SignOut</button>
+      <button className="btn " onClick={() => signOut()}>SignOut</button>
       </>:
       
       <>
